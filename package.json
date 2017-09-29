@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/kensanni/LibraryAPIs/issues"
   },
-  "homepage": "https://github.com/kensanni/LibraryAPIs#readme"
+  "homepage": "https://github.com/kensanni/LibraryAPIs#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.0",
+    "morgan": "^1.9.0"
+  }
 }

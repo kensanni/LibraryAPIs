@@ -13,7 +13,7 @@ export default {
       })
       .then(user => res.status(201).send({
         success: true,
-        messge: 'Account created successfully',
+        messge: 'Account successfully created',
         username: user.username,
         id: user.id,
       }))

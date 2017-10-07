@@ -43,16 +43,6 @@ export default (sequelize, DataTypes) => {
         args: false,
         msg: 'Please enter a password',
       },
-      validate: {
-        isAlphanumeric: {
-          args: true,
-          msg: 'Password should be alphanumeric',
-        },
-        len: {
-          args: [6, 20],
-          msg: 'Password should be between 4 to 20 characters',
-        },
-      },
     },
     membership_type: {
       type: DataTypes.STRING,

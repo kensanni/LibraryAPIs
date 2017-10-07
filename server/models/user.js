@@ -28,7 +28,7 @@ export default (sequelize, DataTypes) => {
       },
       unique: {
         args: true,
-        msg: 'Username already exists',
+        msg: 'Email already exists',
       },
       validate: {
         isEmail: {

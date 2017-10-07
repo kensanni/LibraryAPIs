@@ -9,6 +9,12 @@ export default {
     } = req.body;
     let { password } = req.body;
 
+    if (req.body.password.length <= 6) {
+      return res.status(400).send({
+        message: 'Password must be greater than 6',
+      });
+    }
+
     password = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
     return User
       .create({

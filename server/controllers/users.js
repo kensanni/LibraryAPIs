@@ -1,14 +1,22 @@
+import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
 import { User } from '../models';
 
 export default {
   create(req, res) {
+    const {
+      firstname, lastname, username, email,
+    } = req.body;
+    let { password } = req.body;
+
+    password = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
     return User
       .create({
-        firstname: req.body.firstname,
-        lastname: req.body.lastname,
-        username: req.body.username,
-        email: req.body.email,
-        password: req.body.password,
+        firstname,
+        lastname,
+        username,
+        email,
+        password,
         membership_type: req.body.membership_type,
       })
       .then(user => res.status(201).send({

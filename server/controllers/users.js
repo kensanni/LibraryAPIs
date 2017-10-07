@@ -1,6 +1,5 @@
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import secret from '../middlewares/authenticate';
 import { User } from '../models';
 
 export default {
@@ -49,7 +48,7 @@ export default {
         }
         if (bcrypt.compareSync(req.body.password, user.password)) {
           const payload = { id: user.id, username: user.username };
-          const token = jwt.sign(payload, secret, {
+          const token = jwt.sign(payload, 'sannikay', {
             expiresIn: '2h',
           });
           res.status(200).send({

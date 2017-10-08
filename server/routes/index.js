@@ -6,4 +6,5 @@ export default (app) => {
   }));
 
   app.post('/api/users/signup', controller.users.create);
+  app.post('/api/users/signin', controller.users.signIn);
 };

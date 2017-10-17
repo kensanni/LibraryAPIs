@@ -1,4 +1,5 @@
 import controller from '../controllers';
+import bookController from '../controllers/books';
 
 export default (app) => {
   app.get('/api', (req, res) => res.status(200).send({
@@ -7,10 +8,5 @@ export default (app) => {
 
   app.post('/api/users/signup', controller.users.create);
   app.post('/api/users/signin', controller.users.signIn);
-};
-
-import bookController from '../controllers/books';
-
-export default (app) => {
   app.post('/api/books', bookController.create);
 };
